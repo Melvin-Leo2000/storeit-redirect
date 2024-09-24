@@ -13,10 +13,10 @@
         const source = urlParams.get('source'); 
         
         
-        if (source) {
+        if (source === 'locationA' || source === 'locationB' || source === 'locationC') {
             gtag('event', 'scan', {
                 'event_category': 'QR',
-                'event_label': source
+                'event_label': source 
             });
         }
 

@@ -13,17 +13,14 @@
         const source = urlParams.get('source'); 
         
         
-        if (source === 'locationA' || source === 'locationB' || source === 'locationC') {
+        if (source === 'PGPR Dining' || source === 'UTR Walkway' || source === 'PGPR Carpark') {
             gtag('event', 'scan', {
-                'event_category': 'QR',
+                'event_category': 'Poster QR Codes',
                 'event_label': source 
             });
         }
 
         
-        setTimeout(() => {
-            window.location.href = "https://t.me/nusstoreit";
-        }, 500);
     </script>
     <title>Redirecting...</title>
 </head>

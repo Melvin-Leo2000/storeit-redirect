@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics Tracking Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_MEASUREMENT_ID');
+
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get('source'); // Capture the source parameter
+        
+        // Log the event with the source parameter
+        if (source) {
+            gtag('event', 'scan', {
+                'event_category': 'QR',
+                'event_label': source
+            });
+        }
+
+        // Redirect to your Telegram bot or channel
+        window.location.href = "https://t.me/your-telegram-bot"; // Replace with your Telegram bot or channel link
+    </script>
+    <title>Redirecting...</title>
+</head>
+<body>
+    <p>If you are not redirected, <a href="https://t.me/your-telegram-bot">click here</a>.</p> <!-- Replace with your link -->
+</body>
+</html>

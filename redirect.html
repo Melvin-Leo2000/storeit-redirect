@@ -9,11 +9,10 @@
         gtag('js', new Date());
         gtag('config', 'G-16VY5KC946');
 
-        // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-        const source = urlParams.get('source'); // Capture the source parameter
+        const source = urlParams.get('source'); 
         
-        // Log the event with the source parameter
+        
         if (source) {
             gtag('event', 'scan', {
                 'event_category': 'QR',
@@ -21,13 +20,15 @@
             });
         }
 
-        // Redirect to your Telegram bot or channel
-        window.location.href = "https://t.me/nusstoreit"; // Replace with your Telegram bot or channel link
+        
+        setTimeout(() => {
+            window.location.href = "https://t.me/nusstoreit";
+        }, 500);
     </script>
     <title>Redirecting...</title>
 </head>
 <body>
-    <p>If you are not redirected, <a href="https://t.me/nusstoreit">click here</a>.</p> <!-- Replace with your link -->
+    <p>If you are not redirected, <a href="https://t.me/nusstoreit">click here</a>.</p> 
 </body>
 </html>
 

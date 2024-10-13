@@ -8,24 +8,37 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-XMZQ4W7H4T');
+       // Function to get query parameters
+       function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const source = urlParams.get('source'); 
-        
-        
-        if (source === 'pgprdining' || source === 'utrwalkway' || source === 'pgprcarpark') {
-            gtag('event', 'scan', {
-                'event_category': 'QR',
-                'event_label': source 
+        // Get parameters
+        const source = getQueryParam('source');
+        const target = getQueryParam('target');
+
+        // Send event if source is present
+        if (source) {
+            gtag('event', 'click', {
+                'event_category': 'Links',
+                'event_label': source
             });
         }
 
-    window.location.href = "https://t.me/nusstoreit";
+        // Redirect to target after a short delay
+        setTimeout(function() {
+            if (target) {
+                window.location.href = decodeURIComponent(target);
+            } else {
+                // Fallback URL
+                window.location.href = "https://forms.gle/uVRPtxmptrrw7ftJ9";
+            }
+        }, 100);
     </script>
     <title>Redirecting...</title>
 </head>
 <body>
-    <p>If you are not redirected, <a href="https://t.me/nusstoreit">click here</a>.</p> 
+    <p>If you are not redirected, <a href="https://forms.gle/uVRPtxmptrrw7ftJ9">click here</a>.</p> 
 </body>
 </html>
-

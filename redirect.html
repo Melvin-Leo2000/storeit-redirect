@@ -20,11 +20,21 @@
 
         // Send event if source is present
         if (source) {
-            gtag('event', 'click', {
-                'event_category': 'Links',
-                'event_label': source
-            });
+            if (source.includes('P')) {
+                // If source contains 'P', create a 'click' event
+                gtag('event', 'click', {
+                    'event_category': 'Links',
+                    'event_label': source
+                });
+            } else if (source.includes('T')) {
+                // If source contains 't', create a 'digital' event with 'online_marketing' category
+                gtag('event', 'digital', {
+                    'event_category': 'online_marketing',
+                    'event_label': source
+                });
+            }
         }
+
 
         // Redirect to target after a short delay
         setTimeout(function() {
@@ -34,7 +44,7 @@
                 // Fallback URL
                 window.location.href = "https://forms.gle/uVRPtxmptrrw7ftJ9";
             }
-        }, 10000);
+        }, 100);
     </script>
     <title>Redirecting...</title>
 </head>

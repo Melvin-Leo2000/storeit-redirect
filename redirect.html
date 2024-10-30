@@ -26,8 +26,8 @@
                     'event_category': 'Links',
                     'event_label': source
                 });
-            } else if (source.includes('T')) {
-                // If source contains 't', create a 'digital' event with 'online_marketing' category
+            } else if (source.includes('T') || source.includes('M') || source.includes('U')) {
+                // If source contains 'T', 'M', or 'U', create a 'digital' event with 'online_marketing' category
                 gtag('event', 'digital', {
                     'event_category': 'online_marketing',
                     'event_label': source
